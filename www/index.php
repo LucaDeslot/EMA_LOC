@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Titre de la page</title>
+  <title>EMA'Loc</title>
+  
   <link rel="stylesheet" href="./src/css/global.css">
 </head>
 <body>
@@ -28,7 +29,7 @@
 	$result = $sth->fetchAll(PDO::FETCH_ASSOC);
 	foreach ($result as $key => $array) {
 
-		if(!file_exists("./src/images/logos_associations/".$array['nom'].".PNG") || !file_exists("./src/images/logos_associations/".$array['nom'].".jpg")){
+		if(!file_exists("./src/images/logos_associations/".$array['nom'].".PNG") && !file_exists("./src/images/logos_associations/".$array['nom'].".jpg")){
 			echo '<img class="logoAssociation" src="./src/images/default.jpg" alt="logoDefault"> <br/>'.$array['nom'].'<br/>';
 		}else{
 			if(file_exists("./src/images/logos_associations/".$array['nom'].".PNG")){

@@ -4,7 +4,6 @@ CREATE TABLE association (
      identifiant VARCHAR(100) NOT NULL,
      motdepasse VARCHAR(100) NOT NULL,
      description VARCHAR(255),
-     image VARCHAR(100),
      PRIMARY KEY (idAssociation)
 );
 
@@ -35,7 +34,6 @@ CREATE TABLE objet (
      nom VARCHAR(100) NOT NULL,
      description VARCHAR(255),
      idAssociation INT NOT NULL,
-	 image VARCHAR(100),
      PRIMARY KEY (idObjet),
      CONSTRAINT `objet_idAssociation_fk`
      	FOREIGN KEY `idAssociation_fk` (`idAssociation`) REFERENCES `association` (`idAssociation`)
