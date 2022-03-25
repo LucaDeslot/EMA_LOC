@@ -1,66 +1,15 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>EMA'Loc</title>
-  
-  <link rel="stylesheet" href="./src/css/global.css">
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="https://share-my-location.com/buttons/find-location.svg"/>
+
+	<title>EMA'Loc</title>
+	<link rel="stylesheet" href="./src/css/global.css">
 </head>
 <body>
 <?php
-	$servername = "db";
-	$username = "root";
-	$password = "emaloc";
-
-	try {
-	  $pdo = new PDO("mysql:host=$servername;dbname=EMALOC", $username, $password);
-	  // set the PDO error mode to exception
-	  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	  #echo "Connected successfully";
-	} catch(PDOException $e) {
-	  echo "Connection failed: " . $e->getMessage();
-	}	
-
-	if ($_GET["action"] == 'readAll'){
-		if(isset($_GET['id'])){
-			$sql = 'SELECT * FROM objet WHERE idAssociation='.$_GET['id'];
-			$sth = $pdo->prepare($sql);
-
-			$sth->execute();
-			$result = $sth->fetchAll(PDO::FETCH_ASSOC);
-			foreach ($result as $key => $array) {
-
-				if(file_exists("./src/images/photos_objets/".$array['nom'].".PNG")){
-					echo '<img class="logoAssociation" src="./src/images/photos_objets/'.$array['nom'].'.PNG" alt="logo' . $array['nom'] . '"> <br/>'.$array['nom'].'<br/>';
-				}elseif (file_exists("./src/images/photos_objets/".$array['nom'].".jpg")) {
-					echo '<img class="logoAssociation" src="./src/images/photos_objets/'.$array['nom'].'.jpg" alt="logo' . $array['nom'] . '"> <br/>'.$array['nom'].'<br/>';
-				}elseif (file_exists("./src/images/photos_objets/".$array['nom'].".png")) {
-					echo '<img class="logoAssociation" src="./src/images/photos_objets/'.$array['nom'].'.png" alt="logo' . $array['nom'] . '"> <br/>'.$array['nom'].'<br/>';
-				}else{
-					echo '<img class="logoAssociation" src="./src/images/default.jpg" alt="logoDefault"> <br/>'.$array['nom'].'<br/>';
-				}
-			}
-			
-		}else{
-			$sql = 'SELECT * FROM association';
-			$sth = $pdo->prepare($sql);
-
-			$sth->execute();
-			$result = $sth->fetchAll(PDO::FETCH_ASSOC);
-			foreach ($result as $key => $array) {
-
-				if(!file_exists("./src/images/logos_associations/".$array['nom'].".PNG") && !file_exists("./src/images/logos_associations/".$array['nom'].".jpg")){
-					echo '<img class="logoAssociation" src="./src/images/default.jpg" alt="logoDefault"> <br/>'.$array['nom'].'<br/>';
-				}else{
-					if(file_exists("./src/images/logos_associations/".$array['nom'].".PNG")){
-						echo '<img class="logoAssociation" src="./src/images/logos_associations/'.$array['nom'].'.PNG" alt="logo' . $array['nom'] . '"> <br/>'.$array['nom'].'<br/>';
-					}elseif (file_exists("./src/images/logos_associations/".$array['nom'].".jpg")) {
-						echo '<img class="logoAssociation" src="./src/images/logos_associations/'.$array['nom'].'.jpg" alt="logo' . $array['nom'] . '"> <br/>'.$array['nom'].'<br/>';
-					}
-				}
-			}
-		}
-	}
+	require 'src/php/request.php';
 ?>
 </body>
 </html>

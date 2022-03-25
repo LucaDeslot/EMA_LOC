@@ -65,6 +65,9 @@ INSERT INTO membre (nom, prenom, mail) VALUES ('Deslot', 'Luca', 'luca.deslot@mi
 
 INSERT INTO association (nom, identifiant, motdepasse) VALUES ('BDE', 'BDE', 'BDE');
 INSERT INTO association (nom, identifiant, motdepasse) VALUES ('BDS', 'BDS', 'BDS');
+INSERT INTO association (nom, identifiant, motdepasse) VALUES ('BDA', 'BDA', 'BDA');
+INSERT INTO association (nom, identifiant, motdepasse) VALUES ('EMAMix', 'EMAMix', 'EMAMix');
+INSERT INTO association (nom, identifiant, motdepasse) VALUES ('EMA''sterchef', 'EMA''sterchef', 'EMA''sterchef');
 
 INSERT INTO contact (idMembre, idAssociation) VALUES (1, 1);
 INSERT INTO contact (idMembre, idAssociation) VALUES (3, 1);
