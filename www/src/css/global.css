@@ -2,7 +2,78 @@ body{
 	background-color: firebrick;
 }
 
+footer {
+	background-color: dimgray;
+	margin-top:300px;
+	width:100%;
+}
+
+.hr {
+    /* centre verticalement les enfants entre eux */
+    align-items: center;
+
+    /* active flexbox */
+    display: flex;
+
+    /* garde le texte centré s’il passe sur plusieurs lignes ou si flexbox n’est pas supporté */
+    text-align: center;
+}
+
+.hr::before,
+.hr::after {
+    /* la couleur est volontairement absente ; ainsi elle sera celle du texte */
+    border-top: .0625em solid;
+
+    /* nécessaire pour afficher les pseudo-éléments */
+    content: "";
+
+    /* partage le reste de la largeur disponible */
+    flex: 1;
+
+    /* espace les traits du texte */
+    margin: 0 .5em;
+}
+
 .logo {
-	width: 100px;
+	max-width: 100px;
+	border-radius: 10px;
+}
+
+#searchContainer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#clubLogoContainer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0% 10%;
+	width: fit-content;
+	background-color: rgba(190, 190, 190, .5);
+	border-radius: 10px;
+}
+
+.clubDiv{
+	padding: 30px;
+	text-align: center;
+}
+
+#objetsContainer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0% 10%;
+	width: fit-content;
+	
+	
+	flex-direction: column;
+}
+
+.objetDiv{
+	display: flex;
+	margin: 2% 0%;
+	background-color: rgba(190, 190, 190, .5);	
 	border-radius: 10px;
 }
