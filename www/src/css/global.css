@@ -4,8 +4,22 @@ body{
 
 footer {
 	background-color: dimgray;
-	margin-top:300px;
-	width:100%;
+	width:auto;
+	position:relative;
+  	bottom:0;
+  	left:0;
+}
+
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+
+a {
+	color:white;
+	font-weight: bold;
 }
 
 .hr {
@@ -66,8 +80,6 @@ footer {
 	justify-content: center;
 	margin: 0% 10%;
 	width: fit-content;
-	
-	
 	flex-direction: column;
 }
 
@@ -76,4 +88,15 @@ footer {
 	margin: 2% 0%;
 	background-color: rgba(190, 190, 190, .5);	
 	border-radius: 10px;
+}
+
+#detailsContainer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0% 10%;
+	width: 80%;
+	background-color: rgba(190, 190, 190, .5);
+	border-radius: 10px;
+	
 }
