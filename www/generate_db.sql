@@ -78,6 +78,9 @@ INSERT INTO objet (nom, idAssociation) VALUES ('Soundboks', 1);
 INSERT INTO objet (nom, idAssociation) VALUES ('Grille barbecue', 1);
 INSERT INTO objet (nom, idAssociation) VALUES ('Spike', 2);
 INSERT INTO objet (nom, idAssociation) VALUES ('Béquilles', 2);
+INSERT INTO objet (nom, description, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L', 5);
+
+
 
 INSERT INTO location (idObjet, nom, prenom, mail) VALUES (1, 'Broussard', 'Alex', 'lex24estmort@mines-ales.org');
 INSERT INTO location (idObjet, nom, prenom, mail) VALUES (3, 'Da Rocha', 'Quentin', 'quentin.darocha@mines-ales.org');
