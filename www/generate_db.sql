@@ -79,7 +79,21 @@ INSERT INTO objet (nom, idAssociation) VALUES ('Grille barbecue', 1);
 INSERT INTO objet (nom, idAssociation) VALUES ('Spike', 2);
 INSERT INTO objet (nom, idAssociation) VALUES ('Béquilles', 2);
 INSERT INTO objet (nom, description, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L', 5);
-
+INSERT INTO objet (nom, description, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L', 5);
+INSERT INTO objet (nom, description, idAssociation) VALUES ('Appareil à raclette', 'Tefal inox design 10 pers', 5);
+INSERT INTO objet (nom, description, idAssociation) VALUES ('Appareil à fondue', 'Tefal colormania 8 pers', 5);
+INSERT INTO objet (nom, description, idAssociation) VALUES ('Gaufrier multifonction', 'Boulanger', 5);
+INSERT INTO objet (nom, description, idAssociation) VALUES ('Crépière', 'Krampouz diabolo', 5);
+INSERT INTO objet (nom, idAssociation) VALUES ('Machine à glace', 1);
+INSERT INTO objet (nom, idAssociation) VALUES ('Vidéoprojecteur', 1);
+INSERT INTO objet (nom, idAssociation) VALUES ('Ecran projection', 1);
+INSERT INTO objet (nom, idAssociation) VALUES ('Tireuse', 1);
+INSERT INTO objet (nom, idAssociation) VALUES ('Tireuse', 1);
+INSERT INTO objet (nom, idAssociation) VALUES ('Bancs', 1);
+INSERT INTO objet (nom, idAssociation) VALUES ('Tables', 1);
+INSERT INTO objet (nom, idAssociation) VALUES ('Enrouleurs', 1);
+INSERT INTO objet (nom, idAssociation) VALUES ('Rallonges', 1);
+INSERT INTO objet (nom, idAssociation) VALUES ('Tonnelle', 1);
 
 
 INSERT INTO location (idObjet, nom, prenom, mail) VALUES (1, 'Broussard', 'Alex', 'lex24estmort@mines-ales.org');
