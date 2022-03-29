@@ -15,7 +15,27 @@
         }else{
             echo '<img class="logo" src="./src/images/default.jpg" alt="logoDefault"> <br/>';
         }
-        echo $array['nom'] . ' - ' . $array['description_courte']. ' - ' . $array['prix']. 'euros'. ' -  Disponible :' . $array['Disponible'];
+        if(isset($array['prix']) && $array["prix"]==0){
+            if(isset($array['description_courte']) && $array["description_courte"]==NULL){
+            
+            echo $array['nom'].' Disponible :' . $array['Disponible'];
+        }
+        else{
+            echo $array['nom'] . ' - ' . $array['description_courte'].' -  Disponible :' . $array['Disponible'];
+        }
+    }
+        else {
+            if(isset($array['description_courte']) && $array["description_courte"]==NULL){
+            
+                echo $array['nom']. $array['prix']. 'euros'.' Disponible :' . $array['Disponible'];
+            }
+            else{
+                echo $array['nom'] . ' - ' . $array['description_courte']. ' - ' . $array['prix']. 'euros'. ' -  Disponible :' . $array['Disponible'];
+            }
+            
+            
+        }
+        
         echo'</div>';
         echo'</a>';
     }
