@@ -17,14 +17,12 @@
             <a href="index.php?action=connexion" >
                 <img class="logo" style="float:right;" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="user">
             </a>
-            <h1 class="hr">Recherche</h1>
-            <div class="searchContainer">
-                <input type="text" class="searchTerm" placeholder="Recherche">
-                <button type="submit" class="searchButton">
-                    <span class="material-icons-outlined" style="font-size: 30px;">
+            <div class="search-box">
+                <button class="btn-search"><span class="material-icons-outlined" style="font-size: 30px;">
                         search
                     </span>
                 </button>
+             <input type="text" class="input-search" placeholder="Type to Search...">
             </div>
         </header>
         <main>
