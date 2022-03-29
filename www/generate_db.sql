@@ -97,6 +97,9 @@ INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tables',FALSE, 1);
 INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Enrouleurs',TRUE, 1);
 INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Rallonges',TRUE, 1);
 INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tonnelle',FALSE, 1);
+INSERT INTO objet (nom, description_courte,disponible, idAssociation) VALUES ('Platine', 'XDJ RX Pioneer',FALSE, 4);
+INSERT INTO objet (nom, description_courte,disponible, idAssociation) VALUES ('Teufel', 'Rockster Air',FALSE, 4);
+
 
 
 INSERT INTO location (idObjet, nom, prenom, mail) VALUES (1, 'Broussard', 'Alex', 'lex24estmort@mines-ales.org');
