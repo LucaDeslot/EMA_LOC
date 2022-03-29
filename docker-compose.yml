@@ -22,6 +22,8 @@ services:
             MYSQL_USER: emaloc
             MYSQL_PASSWORD: emaloc
             MYSQL_ROOT_PASSWORD: emaloc
+        cap_add:
+          - SYS_NICE
 
     phpmyadmin:
         image: phpmyadmin
