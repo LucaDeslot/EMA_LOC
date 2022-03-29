@@ -24,7 +24,10 @@
 			$pagetitle="Détails";
 			require 'src/php/view.php';
 		}
-	}else{//Associations case
+	}elseif(isset($_GET['action']) && $_GET["action"] == 'connexion'){
+		require 'src/php/connexion.php';
+	}
+	else{//Associations case
 		if(isset($_GET['idAssociation'])){// TODO: prevent injection
 			$sql = 'SELECT * FROM objet WHERE idAssociation='.$_GET['idAssociation'];
 			$sth = $pdo->prepare($sql);
