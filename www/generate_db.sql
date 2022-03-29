@@ -34,7 +34,7 @@ CREATE TABLE objet (
      nom VARCHAR(100) NOT NULL,
      description_longue VARCHAR(255),
      description_courte VARCHAR(200),
-     prix INT NOT NULL,
+     prix INT,
      disponible BOOLEAN,
      idAssociation INT NOT NULL,
      PRIMARY KEY (idObjet),
