@@ -32,7 +32,10 @@ CREATE TABLE contact (
 CREATE TABLE objet (
      idObjet INT NOT NULL AUTO_INCREMENT,
      nom VARCHAR(100) NOT NULL,
-     description VARCHAR(255),
+     description_longue VARCHAR(255),
+     description_courte VARCHAR(200),
+     prix INT NOT NULL,
+     disponible BOOLEAN,
      idAssociation INT NOT NULL,
      PRIMARY KEY (idObjet),
      CONSTRAINT `objet_idAssociation_fk`
@@ -78,22 +81,22 @@ INSERT INTO objet (nom, idAssociation) VALUES ('Soundboks', 1);
 INSERT INTO objet (nom, idAssociation) VALUES ('Grille barbecue', 1);
 INSERT INTO objet (nom, idAssociation) VALUES ('Spike', 2);
 INSERT INTO objet (nom, idAssociation) VALUES ('Béquilles', 2);
-INSERT INTO objet (nom, description, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L', 5);
-INSERT INTO objet (nom, description, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L', 5);
-INSERT INTO objet (nom, description, idAssociation) VALUES ('Appareil à raclette', 'Tefal inox design 10 pers', 5);
-INSERT INTO objet (nom, description, idAssociation) VALUES ('Appareil à fondue', 'Tefal colormania 8 pers', 5);
-INSERT INTO objet (nom, description, idAssociation) VALUES ('Gaufrier multifonction', 'Boulanger', 5);
-INSERT INTO objet (nom, description, idAssociation) VALUES ('Crépière', 'Krampouz diabolo', 5);
-INSERT INTO objet (nom, idAssociation) VALUES ('Machine à glace', 1);
-INSERT INTO objet (nom, idAssociation) VALUES ('Vidéoprojecteur', 1);
-INSERT INTO objet (nom, idAssociation) VALUES ('Ecran projection', 1);
-INSERT INTO objet (nom, idAssociation) VALUES ('Tireuse', 1);
-INSERT INTO objet (nom, idAssociation) VALUES ('Tireuse', 1);
-INSERT INTO objet (nom, idAssociation) VALUES ('Bancs', 1);
-INSERT INTO objet (nom, idAssociation) VALUES ('Tables', 1);
-INSERT INTO objet (nom, idAssociation) VALUES ('Enrouleurs', 1);
-INSERT INTO objet (nom, idAssociation) VALUES ('Rallonges', 1);
-INSERT INTO objet (nom, idAssociation) VALUES ('Tonnelle', 1);
+INSERT INTO objet (nom, description_courte, prix, disponible, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L',10, TRUE, 5);
+INSERT INTO objet (nom, description_courte, prix, disponible, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L',10,TRUE, 5);
+INSERT INTO objet (nom, description_courte, prix, disponible, idAssociation) VALUES ('Appareil à raclette', 'Tefal inox design 10 pers',5,TRUE, 5);
+INSERT INTO objet (nom, description_courte, prix, disponible, idAssociation) VALUES ('Appareil à fondue', 'Tefal colormania 8 pers',3,TRUE, 5);
+INSERT INTO objet (nom, description_courte, disponible, idAssociation) VALUES ('Gaufrier multifonction', 'Boulanger',TRUE, 5);
+INSERT INTO objet (nom, description_courte, disponible, idAssociation) VALUES ('Crépière', 'Krampouz diabolo',TRUE, 5);
+INSERT INTO objet (nom, disponible,idAssociation) VALUES ('Machine à glace',FALSE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Vidéoprojecteur',FALSE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Ecran projection',TRUE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tireuse',FALSE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tireuse',FALSE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Bancs',FALSE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tables',FALSE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Enrouleurs',TRUE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Rallonges',TRUE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tonnelle',FALSE, 1);
 
 
 INSERT INTO location (idObjet, nom, prenom, mail) VALUES (1, 'Broussard', 'Alex', 'lex24estmort@mines-ales.org');

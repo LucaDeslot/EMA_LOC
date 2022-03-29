@@ -15,7 +15,7 @@
         }else{
             echo '<img class="logo" src="./src/images/default.jpg" alt="logoDefault"> <br/>';
         }
-        echo $array['nom'] . ' - ' . $array['description'];
+        echo $array['nom'] . ' - ' . $array['description_courte']. ' - ' . $array['prix']. 'euros'. ' -  Disponible :' . $array['Disponible'];
         echo'</div>';
         echo'</a>';
     }
