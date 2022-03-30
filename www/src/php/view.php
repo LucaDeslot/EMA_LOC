@@ -12,10 +12,10 @@
     <body>
         <header>
             <a href="index.php" >
-                <img class="logo" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="home">
+                <img src="http://www.cercle-des-eleves.fr/wp-content/uploads/logo-cercle-vector-white-e1639922098763.png" alt="logo du cercle" style="position:absolute;top:0;margin:20px;left:0">
             </a>
             <a href="index.php?action=connexion" >
-                <img class="logo" style="float:right;" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="user">
+                <img class="logo" style="float:right;margin:20px;width:50px;filter: invert(100%)" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="user">
             </a>
             <div class="search-box">
                 <button class="btn-search"><span class="material-icons-outlined" style="font-size: 30px;">

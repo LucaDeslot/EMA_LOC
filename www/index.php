@@ -27,6 +27,21 @@
 	}elseif(isset($_GET['action']) && $_GET["action"] == 'connexion'){
 		require 'src/php/connexion.php';
 	}
+	elseif(isset($_GET['action']) && $_GET["action"] == 'historique' && isset($_GET['id'])){
+			$sql = 'SELECT idObjet, nom FROM objet WHERE idObjet='.$_GET['id'];
+			$sth = $pdo->prepare($sql);
+			$sth->execute();
+			$result = $sth->fetchAll(PDO::FETCH_ASSOC);
+			$objet=$result;
+
+			$sql = 'SELECT * FROM location WHERE idObjet='.$_GET['id'];
+			$sth = $pdo->prepare($sql);
+			$sth->execute();
+			$result = $sth->fetchAll(PDO::FETCH_ASSOC);
+			$page='historique';
+			$pagetitle="Historique";
+			require 'src/php/view.php';
+	}
 	else{//Associations case
 		if(isset($_GET['idAssociation'])){// TODO: prevent injection
 			$sql = 'SELECT * FROM objet WHERE idAssociation='.$_GET['idAssociation'];

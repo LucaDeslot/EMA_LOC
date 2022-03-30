@@ -4,7 +4,7 @@
     foreach ($result as $key => $array) {
         echo '<a href="?idAssociation='.$array['idAssociation'].'">';
         echo '<div class="clubDiv">';
-        echo '<div>';
+        echo '<div style="width:100px;height:100px">';
         if(file_exists("./src/images/logos_associations/".$array['nom'].".PNG")){
             echo '<img class="logo" src="./src/images/logos_associations/'.$array['nom'].'.PNG" alt="logo' . $array['nom'] . '"> <br/>';
         }elseif (file_exists("./src/images/logos_associations/".$array['nom'].".png")) {

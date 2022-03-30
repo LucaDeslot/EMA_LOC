@@ -59,15 +59,17 @@ a {
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	margin: 0% 10%;
-	padding-bottom: 5%;
-	width: fit-content;
 	box-shadow: inset 4px 4px 4px  #c8c9cf, inset -4px -4px 4px  #f6f6f9;
 	border-radius: 10px;
 }
 
+#clubLogoContainer > a {
+	margin:3%;
+
+}
+
 .clubDiv{
-	padding: 30px;
-	margin-top:10%;
+	padding: 20px;
 	text-align: center;
 	box-shadow: 4px 4px 4px  #c8c9cf, -4px -4px 4px  #f6f6f9;
 	border-radius: 10px;
@@ -102,6 +104,9 @@ a {
 
 /*Research bar*/
 .search-box{
+	margin:auto;
+	padding-top: 10%;
+	padding-bottom: 10%;
 	width: fit-content;
 	height: fit-content;
 	position: relative;
