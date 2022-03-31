@@ -47,9 +47,9 @@
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      <li class="ms-3"><a href="https://www.youtube.com/channel/UC4aCarwnYhkgibhatlOl8ZQ"><img class="logoSocialNetwork" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Youtube3_svg-512.png" alt="youtube"></a></li>
+      <li class="ms-3"><a href="https://www.facebook.com/CercleIMTMinesAles/"><img class="logoSocialNetwork" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png" alt="facebook"></a></li>
+      <li class="ms-3"><a href="https://fr.linkedin.com/company/bdeimtminesales"><img class="logoSocialNetwork" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Linkedin2_svg-512.png" alt="linkedin"></a></li>
     </ul>
   </footer>
 </html>

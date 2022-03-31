@@ -16,6 +16,13 @@ body {
 footer{
   width:80%;
 }
+.logoSocialNetwork {
+  width:30px;
+  height:30px;
+  filter: invert(100%);
+}
+
+
 
 form{
   background-color: rgba(0, 0,0, .1);
