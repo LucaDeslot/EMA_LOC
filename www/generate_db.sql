@@ -166,10 +166,13 @@ INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Aiguilles à cr
 
 >>>>>>> f611983 (Modification bdd)
 
+<<<<<<< HEAD
 >>>>>>> 2cbb4e2 (General modification)
 
 
 
+=======
+>>>>>>> 6c2794b (Add image)
 INSERT INTO location (idObjet, nom, prenom, mail) VALUES (1, 'Broussard', 'Alex', 'lex24estmort@mines-ales.org');
 INSERT INTO location (idObjet, nom, prenom, mail, messenger, telephone, dateDebut, dateFin, etat) VALUES (1, 'Pereira', 'Dylan', 'dylan.pereira@mines-ales.org', 'Dylan Pereira', '0623232323', '2022-03-02', '2022-03-05', 'rendu');
 INSERT INTO location (idObjet, nom, prenom, mail, messenger, telephone, dateDebut, dateFin, etat) VALUES (1, 'Pereira', 'Dylan', 'dylan.pereira@mines-ales.org', 'Dylan Pereira', '0623232323', '2022-03-10', '2022-03-15', 'rendu');
