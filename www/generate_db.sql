@@ -116,8 +116,5 @@ INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Aiguilles à cr
 
 
 
-
-
-
 INSERT INTO location (idObjet, nom, prenom, mail) VALUES (1, 'Broussard', 'Alex', 'lex24estmort@mines-ales.org');
 INSERT INTO location (idObjet, nom, prenom, mail) VALUES (3, 'Da Rocha', 'Quentin', 'quentin.darocha@mines-ales.org');
