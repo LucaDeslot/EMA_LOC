@@ -70,7 +70,13 @@ INSERT INTO association (nom, identifiant, motdepasse) VALUES ('BDE', 'BDE', 'BD
 INSERT INTO association (nom, identifiant, motdepasse) VALUES ('BDS', 'BDS', 'BDS');
 INSERT INTO association (nom, identifiant, motdepasse) VALUES ('BDA', 'BDA', 'BDA');
 INSERT INTO association (nom, identifiant, motdepasse) VALUES ('EMAMix', 'EMAMix', 'EMAMix');
-INSERT INTO association (nom, identifiant, motdepasse) VALUES ('EMA''sterchef', 'EMA''sterchef', 'EMA''sterchef');
+INSERT INTO association (nom, identifiant, motdepasse) VALUES ('EMA''Sterchef', 'EMA''Sterchef', 'EMA''Sterchef');
+INSERT INTO association (nom, identifiant, motdepasse) VALUES ('EMABike', 'EMABike', 'EMABike');
+INSERT INTO association (nom, identifiant, motdepasse) VALUES ('Meuhnuiserie', 'Meuhnuiserie', 'Meuhnuiserie');
+INSERT INTO association (nom, identifiant, motdepasse) VALUES ('EMABobine', 'EMABobine', 'EMABobine');
+
+
+
 
 INSERT INTO contact (idMembre, idAssociation) VALUES (1, 1);
 INSERT INTO contact (idMembre, idAssociation) VALUES (3, 1);
@@ -87,18 +93,22 @@ INSERT INTO objet (nom, description_courte, prix, disponible, idAssociation) VAL
 INSERT INTO objet (nom, description_courte, prix, disponible, idAssociation) VALUES ('Appareil à fondue', 'Tefal colormania 8 pers',3,TRUE, 5);
 INSERT INTO objet (nom, description_courte, disponible, idAssociation) VALUES ('Gaufrier multifonction', 'Boulanger',TRUE, 5);
 INSERT INTO objet (nom, description_courte, disponible, idAssociation) VALUES ('Crépière', 'Krampouz diabolo',TRUE, 5);
-INSERT INTO objet (nom, disponible,idAssociation) VALUES ('Machine à glace',FALSE, 1);
-INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Vidéoprojecteur',FALSE, 1);
+INSERT INTO objet (nom, disponible,idAssociation) VALUES ('Machine à glace',TRUE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Vidéoprojecteur',TRUE, 1);
 INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Ecran projection',TRUE, 1);
-INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tireuse',FALSE, 1);
-INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tireuse',FALSE, 1);
-INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Bancs',FALSE, 1);
-INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tables',FALSE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tireuse',TRUE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tireuse',TRUE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Bancs',TRUE, 1);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tables',TRUE, 1);
 INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Enrouleurs',TRUE, 1);
 INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Rallonges',TRUE, 1);
-INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tonnelle',FALSE, 1);
-INSERT INTO objet (nom, description_courte,disponible, idAssociation) VALUES ('Platine', 'XDJ RX Pioneer',FALSE, 4);
-INSERT INTO objet (nom, description_courte,disponible, idAssociation) VALUES ('Teufel', 'Rockster Air',FALSE, 4);
+INSERT INTO objet (nom,disponible, idAssociation) VALUES ('Tonnelle',TRUE, 1);
+INSERT INTO objet (nom, description_courte,disponible, idAssociation) VALUES ('Platine', 'XDJ RX Pioneer',TRUE, 4);
+INSERT INTO objet (nom, description_courte,disponible, idAssociation) VALUES ('Teufel', 'Rockster Air',TRUE, 4);
+INSERT INTO objet (nom, description_courte, description_longue, prix, disponible, idAssociation) VALUES ('Vélo', 'Avec caution', 'Forfait de 5 euros par mois et 30 euros de caution',5, TRUE, 6);
+INSERT INTO objet (nom, disponible, idAssociation) VALUES ('Casque', TRUE, 6);
+INSERT INTO objet (nom, disponible, idAssociation) VALUES ('Cadena', TRUE, 6);
+
 
 
 
