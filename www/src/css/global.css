@@ -19,6 +19,7 @@ a {
 }
 
 .hr {
+	color:#c0002e;
     /* centre verticalement les enfants entre eux */
     align-items: center;
 
@@ -47,6 +48,13 @@ a {
 .logo {
 	max-width: 100px;
 	border-radius: 10px;
+}
+.logoDetails{
+	max-width: 300px;
+}
+#containerDetails{
+	display:flex;
+	margin: auto;
 }
 
 #searchContainer{
