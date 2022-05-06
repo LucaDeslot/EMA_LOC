@@ -2,7 +2,7 @@
 <div id="objetsContainer">
 <?php
     foreach ($result as $key => $array) {
-        echo'<a href="index.php?action=read&id='.$array['idObjet'] .'">';
+        echo'<a href="index.php?action=details&id='.$array['idObjet'] .'">';
         echo '<div class="objetDiv">';
         if(file_exists("./src/images/photos_objets/".$array['nomObjet'].'_'.$array['idObjet'].".PNG")){
             echo '<img class="logo" src="./src/images/photos_objets/'.$array['nomObjet'].'_'.$array['idObjet'].'.PNG" alt="logo' . $array['nomObjet'] . '"> <br/>';

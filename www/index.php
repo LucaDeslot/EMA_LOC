@@ -17,7 +17,7 @@
 	// TODO: PREVENT SQL INJECTION 	
 
 
-	if(isset($_GET['action']) && $_GET["action"] == 'read'){
+	if(isset($_GET['action']) && $_GET["action"] == 'details'){
 		if(isset($_GET['id'])){
 			$sql = 'SELECT * FROM objet WHERE idObjet='.$_GET['id'];
 			$sth = $pdo->prepare($sql);
@@ -59,6 +59,7 @@
 	}
 	else{//Associations case
 		if(isset($_GET['idAssociation'])){
+			// TODO: UTILISER CETTE METHODE DE PREPARATION DE REQUETES PARTOUT POUR EVITER LES INJECTIONS SQL (le truc avec try catch et array)
 			$sql = 'SELECT * FROM objet WHERE idAssociation = :tagAssociation';
 			try{
 				$sth = $pdo->prepare($sql);
