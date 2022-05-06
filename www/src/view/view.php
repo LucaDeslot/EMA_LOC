@@ -27,7 +27,7 @@
         </header>
         <main>
             <?php
-                require 'src/php/'.$page.'.php';
+                require './src/view/'.$page.'.php';
             ?>
         </main>
     </body>

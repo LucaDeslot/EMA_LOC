@@ -2,7 +2,7 @@
 <div id="clubLogoContainer">
 <?php
     foreach ($result as $key => $array) {
-        echo '<a href="?idAssociation='.$array['idAssociation'].'">';
+        echo '<a href="?action=details&idAssociation='.$array['idAssociation'].'">';
         echo '<div class="clubDiv">';
         echo '<div style="width:100px;height:100px">';
         if(file_exists("./src/images/logos_associations/".$array['nom'].".PNG")){
