@@ -1,6 +1,7 @@
 header{
-	background-image: url(http://www.cercle-des-eleves.fr/wp-content/uploads/couverture-scaled.jpg);
+	background-image: url(../images/fonds/fond_bis.jpg); /*url(http://www.cercle-des-eleves.fr/wp-content/uploads/couverture-scaled.jpg);*/
 	margin:0px;
+
 }
 body{
 	background-color: white;
