@@ -12,11 +12,11 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
     //Détails d'une association
     }elseif(isset($_GET['idAssociation'])){
         $result= Model::selectDetailsAssociation($_GET['idAssociation']);
-        $page='association';
+        $page='objets';
         $pagetitle="Association";
         require 'src/view/view.php';
     }else{
-        goToIndex($pdo);
+        goToIndex();
     }
 
 }elseif(isset($_GET['action']) && $_GET["action"] == 'connexion'){
@@ -38,11 +38,15 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
         $pagetitle="Historique";
         require 'src/view/view.php';
     }else{
-        goToIndex($pdo);
+        goToIndex();
     }
     
 }else{
     //Default case, index
+    goToIndex();
+}
+
+function goToIndex(){
     $result= Model::selectAllClubs();
     $page='clubs';
     $pagetitle="Clubs";
