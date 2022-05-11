@@ -1,5 +1,6 @@
 <?php
-  class Conf {
+
+class Conf {
 
       static private $databases = array(
         'database' => 'db',
