@@ -1,0 +1,5 @@
+<?php
+
+require ('historique.php');
+
+?>

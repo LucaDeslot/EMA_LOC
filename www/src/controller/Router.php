@@ -21,9 +21,15 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
         goToIndex();
     }
 
-}elseif(isset($_GET['action']) && $_GET["action"] == 'connexion'){
-
-        require 'src/view/connexion.php';
+} elseif(isset($_GET['action']) && $_GET["action"] == 'connexion'){
+        if(isset($_SESSION['username'])){ // si l'utilisateur est connecté on affiche la page admin
+            $result = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
+            $page='admin';
+            $pagetitle="Administration " . $_SESSION['username'];
+            require './src/view/view.php';
+        } else {
+            require 'src/view/connexion.php';
+        }
 
 }elseif(isset($_GET['action']) && $_GET["action"] == 'connected'){
         

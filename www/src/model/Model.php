@@ -66,6 +66,14 @@ class Model {
         return $result;
     }
 
+    public static function selectHistoryAssociationFromUsername($username) {
+        $sql = "SELECT * FROM association where identifiant='$username'";
+        $sth = Model::$pdo->prepare($sql);
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        return self::selectHistoryAssociation($result[0]['idAssociation']);
+    }
+
     public static function selectDetailsAssociation($idAssociation){
         // TODO: UTILISER CETTE METHODE DE PREPARATION DE REQUETES PARTOUT POUR EVITER LES INJECTIONS SQL (le truc avec try catch et array)
         $sql = 'SELECT * FROM objet WHERE idAssociation = :tagAssociation';

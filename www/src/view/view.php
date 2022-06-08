@@ -17,12 +17,16 @@
             <a href="index.php?action=connexion" >
                 <img class="logo" style="float:right;margin:20px;width:50px;filter: invert(100%)" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="user">
             </a>
+            
             <div class="search-box">
+            <?php if ($page != 'admin') { ?>
                 <button class="btn-search"><span class="material-icons-outlined" style="font-size: 30px;">
                         search
                     </span>
                 </button>
              <input type="text" class="input-search" placeholder="Type to Search...">
+            <?php  } ?>
+
             </div>
         </header>
         <main>
