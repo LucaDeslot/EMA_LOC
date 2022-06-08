@@ -1,5 +1,7 @@
 <?php
+
 require_once('./src/model/Model.php');
+require_once('./src/model/ModelLogin.php');
 
 if(isset($_GET['action']) && $_GET["action"] == 'details'){
     //Détails d'un objet
@@ -20,7 +22,12 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
     }
 
 }elseif(isset($_GET['action']) && $_GET["action"] == 'connexion'){
-    require 'src/view/connexion.php';
+
+        require 'src/view/connexion.php';
+
+}elseif(isset($_GET['action']) && $_GET["action"] == 'connected'){
+        
+    require 'src/view/VerifLogin.php';
 
 }elseif(isset($_GET['action']) && $_GET["action"] == 'historique'){
 

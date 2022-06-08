@@ -14,7 +14,7 @@
   </header>
   <body class="text-center">
     <main class="form-signin">
-      <form action="./src/model/VerifLogin.php" method="post">
+      <form action="index.php?action=connected" method="post">
         <img class="mb-4" style="filter: invert(100%)" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="user" width="72">
 
         <h1 class="h3 mb-3 fw-normal">Connectez-vous</h1>

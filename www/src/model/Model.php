@@ -4,6 +4,8 @@
     require_once dirname(__FILE__) . '/../config/Conf.php';
     require_once dirname(__FILE__) . '/../lib/File.php';
     //gestion de la connexion à la base de données
+
+   
     
 class Model {
 
@@ -14,8 +16,6 @@ class Model {
         $database_name = Conf::getDatabase();
         $login = Conf::getLogin();
         $password = Conf::getPassword();
-
-        echo File::build_path('model','modelLogin.php');
 
         try{
             self::$pdo = new PDO("mysql:host=$database_name;dbname=EMALOC", $login, $password);
