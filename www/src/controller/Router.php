@@ -23,7 +23,7 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
 
 } elseif(isset($_GET['action']) && $_GET["action"] == 'connexion'){
         if(isset($_SESSION['username'])){ // si l'utilisateur est connecté on affiche la page admin
-            $result = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
+            $historique = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
             $page='admin';
             $pagetitle="Administration " . $_SESSION['username'];
             require './src/view/view.php';
@@ -34,6 +34,15 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
 }elseif(isset($_GET['action']) && $_GET["action"] == 'connected'){
         
     require 'src/view/VerifLogin.php';
+
+    if(isset($_SESSION['username'])){ 
+        $result = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
+        $page='admin';
+        $pagetitle="Administration " . $_SESSION['username'];
+        require './src/view/view.php';
+    } else {
+        echo 'mdp incorrect';//
+    }
 
 }elseif(isset($_GET['action']) && $_GET["action"] == 'historique'){
 
@@ -50,10 +59,22 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
         $page='historique';
         $pagetitle="Historique";
         require 'src/view/view.php';
-    }else{
+    } else{
         goToIndex();
     }
     
+} else if(isset($_GET['action']) && $_GET["action"] == 'approveRequest') {
+
+    Model::approveRequest($_POST['idLocation']);
+    $historique = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
+    require './src/view/demande.php';
+    
+} else if (isset($_GET['action']) && $_GET["action"] == 'declineRequest') {
+    
+    Model::declineRequest($_POST['idLocation']);
+    $historique = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
+    require './src/view/demande.php';
+
 }else{
     //Default case, index
     goToIndex();

@@ -88,6 +88,20 @@ class Model {
         return $result;
     }
 
+    public static function approveRequest($idLocation){
+        $sql = "UPDATE location SET etat='accepté' where idLocation = $idLocation";
+        $sth = Model::$pdo->prepare($sql);
+        $sth->execute();
+        $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function declineRequest($idLocation){
+        $sql = "UPDATE location SET etat='refusé' where idLocation = $idLocation";
+        $sth = Model::$pdo->prepare($sql);
+        $sth->execute();
+        $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
 
 Model::Init(); 
