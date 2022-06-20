@@ -7,8 +7,8 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
     //Détails d'un objet
     if(isset($_GET['idObjet'])){
         $result= Model::selectDetailsObject($_GET['idObjet']);
-        $page='details';
-        $pagetitle="Détails";
+        $page='detailsObjet';
+        $pagetitle="Détails objet";
         require './src/view/view.php';
 
     //Détails d'une association
@@ -17,6 +17,7 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
         $page='objets';
         $pagetitle="Association";
         require 'src/view/view.php';
+        
     }else{
         goToIndex();
     }
@@ -47,7 +48,6 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
 }elseif(isset($_GET['action']) && $_GET["action"] == 'historique'){
 
     if(isset($_GET['idObjet'])){// historique d'un objet
-        
         $result=Model::selectHistoryObject($_GET['idObjet']);
         $page='historique';
         $pagetitle="Historique";
@@ -55,7 +55,6 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
 
     }else if (isset($_GET['idAssociation'])){// historique d'une association
         $result=Model::selectHistoryAssociation($_GET['idAssociation']);
-        
         $page='historique';
         $pagetitle="Historique";
         require 'src/view/view.php';

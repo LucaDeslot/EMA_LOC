@@ -12,13 +12,13 @@ class Conf {
         return self::$databases['login'];
     }
 
-     static public function getDatabase() {
+    static public function getDatabase() {
         return self::$databases['database'];
-     }
-     
-     static public function getPassword() {
+    }
+    
+    static public function getPassword() {
         return self::$databases['password'];
-     }
+    }
 
     static private $debug = True; 
     
