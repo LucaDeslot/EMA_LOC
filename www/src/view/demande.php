@@ -53,15 +53,12 @@
                     echo '<td>'. $array['dateFin'].'</td>';
             ?>
                     <td> 
-
                         <?php echo "<button id='approve' onclick='accept(".$array['idLocation'].")' type='button'> "?>
                             <img class='actionImage' src='./src/images/validate.png' title='Valider'> 
                         </button> 
                         <?php echo "<button id='decline' onclick='decline(".$array['idLocation'].")' type='button'> "?>
                             <img class='actionImages' src='./src/images/decline.png' title='Refuser'> 
                         </button> 
-                        
-
                     </td>
                     </tr>
                     

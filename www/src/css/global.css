@@ -169,3 +169,35 @@ a {
 	transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
 
+  form {
+	width: 80%;
+	margin: 0 auto;
+  }
+  
+  label,
+  input {
+	display: inline-block;
+  }
+  
+  label {
+	width: 30%;
+	text-align: right;
+  }
+  
+  label+input {
+	width: 30%;
+	margin: 0 30% 0 4%;
+  }
+  
+  input+input {
+	float: right;
+  }
+
+  #validerInputAdmin {
+	width: 30%;
+	margin: 0 35.4% 0 0;
+  }
+
+  
+
+
