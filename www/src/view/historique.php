@@ -46,7 +46,7 @@
                         echo '</tr>';
                     }
                 }else{
-                    foreach ($result as $key => $array) {
+                    foreach ($historique as $key => $array) {
                         echo '<tr>';
                         echo '<td>'. $array['nomObjet'].'</td>';
                         echo '<td>'. $array['prenom'].'</td>';

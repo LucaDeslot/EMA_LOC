@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
     <body>
         <header>
@@ -17,12 +18,16 @@
             <a href="index.php?action=connexion" >
                 <img class="logo" style="float:right;margin:20px;width:50px;filter: invert(100%)" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="user">
             </a>
+            
             <div class="search-box">
+            <?php if ($page != 'admin') { ?>
                 <button class="btn-search"><span class="material-icons-outlined" style="font-size: 30px;">
                         search
                     </span>
                 </button>
              <input type="text" class="input-search" placeholder="Type to Search...">
+            <?php  } ?>
+
             </div>
         </header>
         <main>

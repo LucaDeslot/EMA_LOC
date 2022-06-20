@@ -14,17 +14,17 @@
   </header>
   <body class="text-center">
     <main class="form-signin">
-      <form>
+      <form action="index.php?action=connected" method="post">
         <img class="mb-4" style="filter: invert(100%)" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="user" width="72">
 
         <h1 class="h3 mb-3 fw-normal">Connectez-vous</h1>
 
         <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <input type="username" class="form-control" id="floatingInput" placeholder="name@example.com" name='username'>
           <label for="floatingInput">Identifiant</label>
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name='password'>
           <label for="floatingPassword">Mot de passe</label>
         </div>
 

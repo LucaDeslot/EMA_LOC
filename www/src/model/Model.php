@@ -1,13 +1,18 @@
 
 <?php
-    require_once('./src/config/Conf.php');
-    
+
+    require_once dirname(__FILE__) . '/../config/Conf.php';
+    require_once dirname(__FILE__) . '/../lib/File.php';
     //gestion de la connexion à la base de données
+
+   
     
 class Model {
+
     public static $pdo;
 
     public static function Init(){
+
         $database_name = Conf::getDatabase();
         $login = Conf::getLogin();
         $password = Conf::getPassword();
@@ -61,6 +66,14 @@ class Model {
         return $result;
     }
 
+    public static function selectHistoryAssociationFromUsername($username) {
+        $sql = "SELECT * FROM association where identifiant='$username'";
+        $sth = Model::$pdo->prepare($sql);
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        return self::selectHistoryAssociation($result[0]['idAssociation']);
+    }
+
     public static function selectDetailsAssociation($idAssociation){
         // TODO: UTILISER CETTE METHODE DE PREPARATION DE REQUETES PARTOUT POUR EVITER LES INJECTIONS SQL (le truc avec try catch et array)
         $sql = 'SELECT * FROM objet WHERE idAssociation = :tagAssociation';
@@ -73,6 +86,20 @@ class Model {
             die();
         }
         return $result;
+    }
+
+    public static function approveRequest($idLocation){
+        $sql = "UPDATE location SET etat='accepté' where idLocation = $idLocation";
+        $sth = Model::$pdo->prepare($sql);
+        $sth->execute();
+        $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function declineRequest($idLocation){
+        $sql = "UPDATE location SET etat='refusé' where idLocation = $idLocation";
+        $sth = Model::$pdo->prepare($sql);
+        $sth->execute();
+        $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }
