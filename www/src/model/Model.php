@@ -101,6 +101,13 @@ class Model {
         $sth->execute();
         $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+    public static function ajoutItem($name,$number,$description,$prix){
+        $sql = "INSERT INTO objet (nomObjet,description_longue,description_courte,prix, disponible, idAssociation) VALUES ('$name','$description','$description',$prix,$number,1)";
+        $sth = Model::$pdo->prepare($sql);
+        $sth->execute();
+        $sth->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
 
 }
 

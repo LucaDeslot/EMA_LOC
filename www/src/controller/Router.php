@@ -23,14 +23,7 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
     }
 
 } elseif(isset($_GET['action']) && $_GET["action"] == 'connexion'){
-        if(isset($_SESSION['username'])){ // si l'utilisateur est connecté on affiche la page admin
-            $historique = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
-            $page='admin';
-            $pagetitle="Administration " . $_SESSION['username'];
-            require './src/view/view.php';
-        } else {
-            require 'src/view/connexion.php';
-        }
+        refreshCSS();
 
 }elseif(isset($_GET['action']) && $_GET["action"] == 'connected'){
         
@@ -74,6 +67,12 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
     $historique = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
     require './src/view/demande.php';
 
+}else if (isset($_GET['action']) && $_GET["action"] == 'ajoutItemAdmin') {
+    Model::ajoutItem($_POST['name'],$_POST['number'],$_POST['description'],$_POST['prix']);
+    //tableau association rafraichit
+    refreshCSS();
+    
+
 }else{
     //Default case, index
     goToIndex();
@@ -84,5 +83,15 @@ function goToIndex(){
     $page='clubs';
     $pagetitle="Clubs";
     require './src/view/view.php';
+}
+function refreshCSS(){
+    if(isset($_SESSION['username'])){ // si l'utilisateur est connecté on affiche la page admin
+        $historique = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
+        $page='admin';
+        $pagetitle="Administration " . $_SESSION['username'];
+        require './src/view/view.php';
+    } else {
+        require 'src/view/connexion.php';
+    }
 }
 ?>
