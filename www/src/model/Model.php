@@ -101,12 +101,20 @@ class Model {
         $sth->execute();
         $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-    public static function ajoutItem($name,$number,$description,$prix){
-        $sql = "INSERT INTO objet (nomObjet,description_longue,description_courte,prix, disponible, idAssociation) VALUES ('$name','$description','$description',$prix,$number,1)";
+    public static function ajoutItem($name,$number,$description,$prix,$username){
+        echo $username;
+        $sql = "INSERT INTO objet (nomObjet,description_longue,description_courte,prix, disponible, idAssociation) VALUES ('$name','$description','$description',$prix,$number,$username)";
         $sth = Model::$pdo->prepare($sql);
         $sth->execute();
         $sth->fetchAll(PDO::FETCH_ASSOC);
         
+    }
+    public static function getIdAssociation($username) {
+        $sql = "SELECT idAssociation FROM association where identifiant='$username'";
+        $sth = Model::$pdo->prepare($sql);
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $result[0]['idAssociation'];
     }
 
 }

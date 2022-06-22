@@ -23,7 +23,7 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
     }
 
 } elseif(isset($_GET['action']) && $_GET["action"] == 'connexion'){
-        refreshCSS();
+        refreshCSS();                            
 
 }elseif(isset($_GET['action']) && $_GET["action"] == 'connected'){
         
@@ -68,7 +68,8 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
     require './src/view/demande.php';
 
 }else if (isset($_GET['action']) && $_GET["action"] == 'ajoutItemAdmin') {
-    Model::ajoutItem($_POST['name'],$_POST['number'],$_POST['description'],$_POST['prix']);
+    $user = Model::getIdAssociation($_SESSION['username']);
+    Model::ajoutItem($_POST['name'],$_POST['number'],$_POST['description'],$_POST['prix'],$user);
     //tableau association rafraichit
     refreshCSS();
     
