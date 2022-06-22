@@ -26,6 +26,9 @@
         <div class="form-floating">
           <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name='password'>
           <label for="floatingPassword">Mot de passe</label>
+          <?php
+          echo $messageErreur;
+          ?>
         </div>
 
         <div class="checkbox mb-3">
@@ -38,6 +41,9 @@
     </main>
 
   </body>
+  <form action="index.php?action=connected" method="post">
+  <img class="mb-4" style="filter: invert(100%)" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="user" width="72">
+  </form>
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">

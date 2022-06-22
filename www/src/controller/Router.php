@@ -25,17 +25,18 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
 } elseif(isset($_GET['action']) && $_GET["action"] == 'connexion'){
         refreshCSS();                            
 
-}elseif(isset($_GET['action']) && $_GET["action"] == 'connected'){
+}elseif(isset($_GET['action']) && $_GET["action"] == 'connected'){ // connexion à l'espace admin
         
     require 'src/view/VerifLogin.php';
-
-    if(isset($_SESSION['username'])){ 
+    if(isset($_SESSION['username']) && ($_SESSION['password'])){ 
         $result = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
         $page='admin';
-        $pagetitle="Administration " . $_SESSION['username'];
+        $messageErreur = NULL;
         require './src/view/view.php';
     } else {
-        echo 'mdp incorrect';//
+        $messageErreur = "Invalid username or password";
+        require './src/view/connexion.php';
+        
     }
 
 }elseif(isset($_GET['action']) && $_GET["action"] == 'historique'){
@@ -74,6 +75,9 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
     refreshCSS();
     
 
+}elseif(isset($_GET['action']) && $_GET["action"] == 'deconnexion'){
+        deco();                            
+
 }else{
     //Default case, index
     goToIndex();
@@ -94,5 +98,12 @@ function refreshCSS(){
     } else {
         require 'src/view/connexion.php';
     }
+}
+function deco(){ //deconnexion utilisateur
+    if(isset($_SESSION['username'])){
+        $_SESSION['username']=NULL;
+        require 'src/view/connexion.php';
+    }
+
 }
 ?>

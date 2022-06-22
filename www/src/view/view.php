@@ -15,6 +15,12 @@
             <a href="index.php" >
                 <img src="http://www.cercle-des-eleves.fr/wp-content/uploads/logo-cercle-vector-white-e1639922098763.png" alt="logo du cercle" style="position:absolute;top:0;margin:20px;left:0">
             </a>
+            <a href="index.php" >
+                <img class="logo" style="float:left;margin-top:80px;margin-left:20px;margin-right:25px;width:50px;filter: invert(100%)" src="https://cdn-icons-png.flaticon.com/128/1946/1946488.png" alt="logo deco" style="position:absolute;top:0;margin:20px;left:0">
+            </a>            
+            <a href="index.php?action=deconnexion" >
+                <img class="logo" style="float:right;margin-top:20px;margin-left:25px;margin-right:25px;width:50px;filter: invert(100%)" src="https://cdn-icons-png.flaticon.com/512/182/182448.png" alt="logo deco" style="position:absolute;top:0;margin:20px;left:0">
+            </a>
             <a href="index.php?action=connexion" >
                 <img class="logo" style="float:right;margin:20px;width:50px;filter: invert(100%)" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="user">
             </a>
