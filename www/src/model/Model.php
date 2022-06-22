@@ -3,10 +3,13 @@
 
     require_once dirname(__FILE__) . '/../config/Conf.php';
     require_once dirname(__FILE__) . '/../lib/File.php';
+    use PHPMailer\PHPMailer\PHPMailer;
+
+    require dirname(__FILE__) . '/../PHPMailer/src/PHPMailer.php';
+    require dirname(__FILE__) . '/../PHPMailer/src/SMTP.php';
+
     //gestion de la connexion à la base de données
 
-   
-    
 class Model {
 
     public static $pdo;
@@ -88,7 +91,15 @@ class Model {
         return $result;
     }
 
+    public static function getMailFromIdLocations($idLocations){
+        $sql = "SELECT mail FROM location WHERE idLocation = $idLocations";
+        $sth = Model::$pdo->prepare($sql);
+        $sth->execute();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public static function approveRequest($idLocation){
+        self::sendMailToUser(self::getMailFromIdLocations($idLocation)[0]['mail'], "Votre réservation a été acceptée");
         $sql = "UPDATE location SET etat='accepté' where idLocation = $idLocation";
         $sth = Model::$pdo->prepare($sql);
         $sth->execute();
@@ -96,6 +107,7 @@ class Model {
     }
 
     public static function declineRequest($idLocation){
+        self::sendMailToUser(self::getMailFromIdLocations($idLocation)[0], "Votre réservation a été refusée");
         $sql = "UPDATE location SET etat='refusé' where idLocation = $idLocation";
         $sth = Model::$pdo->prepare($sql);
         $sth->execute();
@@ -109,6 +121,43 @@ class Model {
         
     }
 
+    private function sendMailToUser($email, $msg){
+        $mail = new PHPMailer(true);
+        $mail->IsSMTP(); // telling the class to use SMTP
+
+        //Send mail using gmail
+        $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+
+        $mail->SMTPAuth = true; // enable SMTP authentication
+
+
+        $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
+
+        $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
+
+        $mail->Port = 465; // set the SMTP port for the GMAIL server
+
+        $mail->IsHTML(true);
+
+        $mail->Username = "emaloc.ales@gmail.com"; // GMAIL username
+
+        $mail->Password = "lxcaxxoxuqutkgtb"; // GMAIL password
+
+        //Typical mail data
+
+        $mail->SetFrom("emaloc.ales@gmail.com");
+
+        $mail->Subject = "Etat de votre demande";
+
+        $mail->Body = $msg;
+
+        $mail->AddAddress($email);
+
+
+        if(!$mail->Send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+         } 
+    }
 }
 
 Model::Init(); 
