@@ -78,6 +78,13 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
 }elseif(isset($_GET['action']) && $_GET["action"] == 'deconnexion'){
         deco();                            
 
+}else if (isset($_GET['action']) && $_GET["action"] == 'createDemandeLocation') {
+    Model::createDemandeLocation($_POST['idObjet'],$_POST['nom'],$_POST['prenom'],$_POST['mail'],$_POST['messenger'],$_POST['telephone'],$_POST['dateDebut'],$_POST['dateFin'],$_POST['etat']);
+    $data = array('idObjet' => $_POST['idObjet'],'nom' => $_POST['nom'],'mail' => $_POST['mail'],'prenom' => $_POST['prenom'],'dateDebut' => $_POST['dateDebut'],'dateFin' => $_POST['dateFin']);
+    $data = array_merge($data, Model::selectDetailsObject($_POST['idObjet']));
+    $page='confirmation_demande';
+    $pagetitle="Confirmation";
+    require 'src/view/view.php';
 }else{
     //Default case, index
     goToIndex();

@@ -26,11 +26,18 @@
     }
         else {
             if(isset($array['description_courte']) && $array["description_courte"]==NULL){
-            
-                echo $array['nomObjet']. $array['prix']. 'euros'.' Disponible :' . $array['Disponible'];
+                if(is_null($array['prix'])){
+                    echo $array['nomObjet']. 'Gratuit - Disponible :' . $array['Disponible'];
+                }else{
+                    echo $array['nomObjet']. $array['prix']. 'euros'.' Disponible :' . $array['Disponible'];
+                }
             }
             else{
-                echo $array['nomObjet'] . ' - ' . $array['description_courte']. ' - ' . $array['prix']. 'euros'. ' -  Disponible :' . $array['Disponible'];
+                if(is_null($array['prix'])){
+                    echo $array['nomObjet'].' - ' . $array['description_courte']. ' - ' . 'Gratuit Disponible :' . $array['Disponible'];
+                }else{
+                    echo $array['nomObjet'] . ' - ' . $array['description_courte']. ' - ' . $array['prix']. 'euros'. ' -  Disponible :' . $array['Disponible'];
+                }
             }
             
             

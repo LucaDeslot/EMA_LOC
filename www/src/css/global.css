@@ -46,13 +46,15 @@ a {
 }
 
 .logo {
-	max-width: 100px;
+	width: 100px;
 	border-radius: 10px;
+	
 }
 .logoDetails{
 	max-width: 300px;
 }
 #containerDetails{
+	justify-content: center;
 	display:flex;
 	margin: auto;
 }
@@ -88,13 +90,14 @@ a {
 	flex-wrap: wrap;
 	justify-content: center;
 	margin: 0% 10%;
-	width: fit-content;
+	width: 80%;
 	flex-direction: column;
 }
 
 .objetDiv{
 	display: flex;
-	margin: 2% 0%;
+	height: 100px;
+	margin: 2% auto;
 	background-color: rgba(190, 190, 190, .5);	
 	border-radius: 10px;
 }
@@ -197,7 +200,5 @@ a {
 	width: 30%;
 	margin: 0 35.4% 0 0;
   }
-
-  
 
 

@@ -121,6 +121,15 @@ class Model {
         $sth->fetchAll(PDO::FETCH_ASSOC);
         
     }
+
+    public static function createDemandeLocation($idObjet,$nom,$prenom,$mail,$messenger,$telephone,$dateDebut,$dateFin){
+        $sql = "INSERT INTO location (idObjet,nom,prenom,mail,messenger,telephone,dateDebut,dateFin,etat) VALUES ('$idObjet','$nom','$prenom','$mail','$messenger','$telephone','$dateDebut','$dateFin', 'demande')";
+        $sth = Model::$pdo->prepare($sql);
+        $sth->execute();
+        $sth->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+
     public static function getIdAssociation($username) {
         $sql = "SELECT idAssociation FROM association where identifiant='$username'";
         $sth = Model::$pdo->prepare($sql);

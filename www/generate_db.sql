@@ -77,7 +77,8 @@ INSERT INTO contact (idMembre, idAssociation) VALUES (3, 1);
 INSERT INTO contact (idMembre, idAssociation) VALUES (2, 2);
 INSERT INTO contact (idMembre, idAssociation) VALUES (4, 2);
 
-INSERT INTO objet (nomObjet, idAssociation) VALUES ('Soundboks', 1);
+INSERT INTO objet (nomObjet, ,decription_longue, description_courte, idAssociation) VALUES ('Soundboks','Une superbe enceinte Bluetooth prête à mettre le feu dans tout les apparts les plus chauds de la pinède ! 
+Attention à ne pas se brûler ', 'Une superbe enceinte Bluetooth !', 1);
 INSERT INTO objet (nomObjet, idAssociation) VALUES ('Grille barbecue', 1);
 INSERT INTO objet (nomObjet, idAssociation) VALUES ('Spike', 2);
 INSERT INTO objet (nomObjet, idAssociation) VALUES ('Béquilles', 2);
