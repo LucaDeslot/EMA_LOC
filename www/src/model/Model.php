@@ -33,8 +33,6 @@ class Model {
         }
     }
 
-    //TODO : Il faut renforcer la sécurité pour éviter les injections sql avec les try catch (voir le projet willy wonka)
-
     public static function selectAllClubs(){
         $sql = 'SELECT * FROM association';
         $sth = Model::$pdo->prepare($sql);
@@ -45,40 +43,58 @@ class Model {
     }
 
     public static function selectDetailsObject($idObjet){
-        $sql = 'SELECT * FROM objet WHERE idObjet='.$idObjet;
-        $sth = Model::$pdo->prepare($sql);
-
-        $sth->execute();
-        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        $sql = 'SELECT * FROM objet WHERE idObjet=:tag_objet';
+        try{
+            $sth = Model::$pdo->prepare($sql);
+            $sth->execute(array('tag_objet' => $idObjet));
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
         return $result;
     }
 
     public static function selectHistoryObject($idObjet){
-        $sql = 'SELECT * FROM location l JOIN objet o ON o.idObjet=l.idObjet WHERE l.idObjet='.$idObjet;
-        $sth = Model::$pdo->prepare($sql);
-        $sth->execute();
-        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        $sql = 'SELECT * FROM location l JOIN objet o ON o.idObjet=l.idObjet WHERE l.idObjet=:tag_objet';
+        try{
+            $sth = Model::$pdo->prepare($sql);
+            $sth->execute(array('tag_objet' => $idObjet));
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
         return $result;
     }
 
     public static function selectHistoryAssociation($idAssociation){
-        $sql = 'SELECT * FROM location l JOIN objet o ON o.idObjet=l.idObjet WHERE idAssociation='.$idAssociation;
-        $sth = Model::$pdo->prepare($sql);
-        $sth->execute();
-        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        $sql = 'SELECT * FROM location l JOIN objet o ON o.idObjet=l.idObjet WHERE idAssociation= :tag_association';
+        try{
+            $sth = Model::$pdo->prepare($sql);
+            $sth->execute(array('tag_association' => $idAssociation));
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
         return $result;
     }
 
     public static function selectHistoryAssociationFromUsername($username) {
-        $sql = "SELECT * FROM association where identifiant='$username'";
-        $sth = Model::$pdo->prepare($sql);
-        $sth->execute();
-        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        $sql = "SELECT * FROM association where identifiant= :tag_username";
+        try{
+            $sth = Model::$pdo->prepare($sql);
+            $sth->execute(array('tag_username' => $username));
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
         return self::selectHistoryAssociation($result[0]['idAssociation']);
     }
 
     public static function selectDetailsAssociation($idAssociation){
-        // TODO: UTILISER CETTE METHODE DE PREPARATION DE REQUETES PARTOUT POUR EVITER LES INJECTIONS SQL (le truc avec try catch et array)
         $sql = 'SELECT * FROM objet WHERE idAssociation = :tagAssociation';
         try{
             $sth = Model::$pdo->prepare($sql);
@@ -92,26 +108,41 @@ class Model {
     }
 
     public static function getMailFromIdLocations($idLocations){
-        $sql = "SELECT mail FROM location WHERE idLocation = $idLocations";
-        $sth = Model::$pdo->prepare($sql);
-        $sth->execute();
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
+        $sql = 'SELECT mail FROM location WHERE idLocation = :tagidLocation';
+        try{
+            $sth = Model::$pdo->prepare($sql);
+            $sth->execute(array('tagidLocation' => $idLocations));
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
     }
 
     public static function approveRequest($idLocation){
-        self::sendMailToUser(self::getMailFromIdLocations($idLocation)[0]['mail'], "Votre réservation a été acceptée");
-        $sql = "UPDATE location SET etat='accepté' where idLocation = $idLocation";
-        $sth = Model::$pdo->prepare($sql);
-        $sth->execute();
-        $sth->fetchAll(PDO::FETCH_ASSOC);
+        $sql = "UPDATE location SET etat='accepté' where idLocation = :tagidLocation";
+        try{
+            $sth = Model::$pdo->prepare($sql);
+            $sth->execute(array('tagidLocation' => $idLocation));
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
     }
 
     public static function declineRequest($idLocation){
         self::sendMailToUser(self::getMailFromIdLocations($idLocation)[0], "Votre réservation a été refusée");
-        $sql = "UPDATE location SET etat='refusé' where idLocation = $idLocation";
-        $sth = Model::$pdo->prepare($sql);
-        $sth->execute();
-        $sth->fetchAll(PDO::FETCH_ASSOC);
+        $sql = "UPDATE location SET etat='refusé' where idLocation = :tagidLocation";
+        try{
+            $sth = Model::$pdo->prepare($sql);
+            $sth->execute(array('tagidLocation' => $idLocation));
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
     }
     public static function ajoutItem($name,$number,$description,$prix,$username){
         echo $username;
@@ -131,10 +162,15 @@ class Model {
     }
 
     public static function getIdAssociation($username) {
-        $sql = "SELECT idAssociation FROM association where identifiant='$username'";
-        $sth = Model::$pdo->prepare($sql);
-        $sth->execute();
-        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        $sql = "SELECT idAssociation FROM association where identifiant=:tag_username";
+        try{
+            $sth = Model::$pdo->prepare($sql);
+            $sth->execute(array('tag_username' => $username));
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
         return $result[0]['idAssociation'];
     }
 
