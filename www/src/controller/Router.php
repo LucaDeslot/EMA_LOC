@@ -29,9 +29,9 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
         
     require 'src/view/VerifLogin.php';
     if(isset($_SESSION['username']) && ($_SESSION['password'])){ 
-        $result = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
+        $historique = Model::selectHistoryAssociationFromUsername($_SESSION['username']);
         $page='admin';
-        $messageErreur = NULL;
+        $pagetitle="Administration " . $_SESSION['username'];
         require './src/view/view.php';
     } else {
         $messageErreur = "Invalid username or password";
