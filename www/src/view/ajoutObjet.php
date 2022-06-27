@@ -10,7 +10,9 @@
         <input type="number" name="prix" id="prix" required>
         <label for="number">Nombre disponible : </label>
         <input type="number" name="number" id="number" required>
-        <input type="submit" value="Valider" id="validerInputAdmin" > 
+        <label for="number">Select image to upload:</label>
+        <input type="file" name="fileToUpload" id="fileToUpload" required>
+        <input type="submit" value="Valider" id="validerInputAdmin">
         </button>
     </form>
 </div>
