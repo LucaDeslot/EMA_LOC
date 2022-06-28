@@ -70,7 +70,7 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
 
 }else if (isset($_GET['action']) && $_GET["action"] == 'ajoutItemAdmin') {
     $user = Model::getIdAssociation($_SESSION['username']);
-    Model::ajoutItem($_POST['name'],$_POST['number'],$_POST['description'],$_POST['prix'],$user);
+    Model::ajoutItem($_POST['name'],$_POST['number'],$_POST['description'],$_POST['longDescription'],$_POST['prix'],$user);
     //tableau association rafraichit
     refreshCSS();
     

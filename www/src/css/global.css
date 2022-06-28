@@ -181,6 +181,10 @@ a {
   input {
 	display: inline-block;
   }
+
+  textarea {
+	display: inline-block;
+  }
   
   label {
 	width: 30%;
@@ -191,14 +195,22 @@ a {
 	width: 30%;
 	margin: 0 30% 0 4%;
   }
+
+  label+textarea {
+	width: 30%;
+	margin: 0 30% 0 4%;
+  }
   
   input+input {
 	float: right;
   }
 
+
   #validerInputAdmin {
 	width: 30%;
 	margin: 0 35.4% 0 0;
   }
+
+
 
 

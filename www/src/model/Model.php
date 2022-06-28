@@ -144,9 +144,9 @@ class Model {
             die();
         }
     }
-    public static function ajoutItem($name,$number,$description,$prix,$username){
+    public static function ajoutItem($name,$number,$description, $longDescription,$prix,$username){
         echo $username;
-        $sql = "INSERT INTO objet (nomObjet,description_longue,description_courte,prix, disponible, idAssociation) VALUES ('$name','$description','$description',$prix,$number,$username)";
+        $sql = "INSERT INTO objet (nomObjet,description_longue,description_courte,prix, disponible, idAssociation) VALUES ('$name','$longDescription','$description',$prix,$number,$username)";
         $sth = Model::$pdo->prepare($sql);
         $sth->execute();
         $sth->fetchAll(PDO::FETCH_ASSOC);
