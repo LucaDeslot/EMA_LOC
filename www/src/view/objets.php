@@ -4,10 +4,6 @@
     foreach ($result as $key => $array) {
         echo'<a href="index.php?action=details&idObjet='.$array['idObjet'] .'">';
         echo '<div class="objetDiv">';
-        if($_SESSION['username']){
-        $folder=$_SESSION['username'];
-        }
-        else{
             if($array['idAssociation']==1)
             {
                 $folder='BDE';
@@ -28,7 +24,7 @@
             {
                 $folder="EMA'sterchef";
             }
-        }
+        
         if(file_exists("./src/images/photos_objets/".$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].".PNG")){
             echo '<img class="logo" src="./src/images/photos_objets/'.$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].'.PNG" alt="logo' . $array['nomObjet'] . '"> <br/>';
         }elseif (file_exists("./src/images/photos_objets/".$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].".png")) {
