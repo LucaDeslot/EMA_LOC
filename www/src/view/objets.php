@@ -4,14 +4,39 @@
     foreach ($result as $key => $array) {
         echo'<a href="index.php?action=details&idObjet='.$array['idObjet'] .'">';
         echo '<div class="objetDiv">';
-        if(file_exists("./src/images/photos_objets/".$array['nomObjet'].'_'.$array['idObjet'].".PNG")){
-            echo '<img class="logo" src="./src/images/photos_objets/'.$array['nomObjet'].'_'.$array['idObjet'].'.PNG" alt="logo' . $array['nomObjet'] . '"> <br/>';
-        }elseif (file_exists("./src/images/photos_objets/".$array['nomObjet'].'_'.$array['idObjet'].".png")) {
-            echo '<img class="logo" src="./src/images/photos_objets/'.$array['nomObjet'].'_'.$array['idObjet'].'.png" alt="logo' . $array['nomObjet'] . '"> <br/>';
-        }elseif (file_exists("./src/images/photos_objets/".$array['nomObjet'].'_'.$array['idObjet'].".jpg")) {
-            echo '<img class="logo" src="./src/images/photos_objets/'.$array['nomObjet'].'_'.$array['idObjet'].'.jpg" alt="logo' . $array['nomObjet'] . '"> <br/>';
-        }elseif (file_exists("./src/images/photos_objets/".$array['nomObjet'].'_'.$array['idObjet'].".JPG")) {
-            echo '<img class="logo" src="./src/images/photos_objets/'.$array['nomObjet'].'_'.$array['idObjet'].'.JPG" alt="logo' . $array['nomObjet'] . '"> <br/>';
+        if($_SESSION['username']){
+        $folder=$_SESSION['username'];
+        }
+        else{
+            if($array['idAssociation']==1)
+            {
+                $folder='BDE';
+            }
+            if($array['idAssociation']==2)
+            {
+                $folder='BDS';
+            }
+            if($array['idAssociation']==3)
+            {
+                $folder='BDA';
+            }
+            if($array['idAssociation']==4)
+            {
+                $folder='EMAMix';
+            }
+            if($array['idAssociation']==5)
+            {
+                $folder="EMA'sterchef";
+            }
+        }
+        if(file_exists("./src/images/photos_objets/".$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].".PNG")){
+            echo '<img class="logo" src="./src/images/photos_objets/'.$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].'.PNG" alt="logo' . $array['nomObjet'] . '"> <br/>';
+        }elseif (file_exists("./src/images/photos_objets/".$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].".png")) {
+            echo '<img class="logo" src="./src/images/photos_objets/'.$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].'.png" alt="logo' . $array['nomObjet'] . '"> <br/>';
+        }elseif (file_exists("./src/images/photos_objets/".$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].".jpg")) {
+            echo '<img class="logo" src="./src/images/photos_objets/'.$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].'.jpg" alt="logo' . $array['nomObjet'] . '"> <br/>';
+        }elseif (file_exists("./src/images/photos_objets/".$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].".JPG")) {
+            echo '<img class="logo" src="./src/images/photos_objets/'.$folder.'/'.$array['nomObjet'].'_'.$array['idObjet'].'.JPG" alt="logo' . $array['nomObjet'] . '"> <br/>';
         }else{
             echo '<img class="logo" src="./src/images/default.jpg" alt="logoDefault"> <br/>';
         }

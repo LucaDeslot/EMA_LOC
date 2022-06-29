@@ -69,10 +69,6 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
     require './src/view/demande.php';
 
 }else if (isset($_GET['action']) && $_GET["action"] == 'ajoutItemAdmin') {
-<<<<<<< HEAD
-    $user = Model::getIdAssociation($_SESSION['username']);
-    Model::ajoutItem($_POST['name'],$_POST['number'],$_POST['description'],$_POST['longDescription'],$_POST['prix'],$user);
-=======
     $idAssoc = Model::getIdAssociation($_SESSION['username']);
     Model::ajoutItem($_POST['name'],$_POST['number'],$_POST['description'],$_POST['prix'],$idAssoc);
     if(!empty($_FILES['fileToUpload']))
@@ -82,7 +78,6 @@ if(isset($_GET['action']) && $_GET["action"] == 'details'){
             Model::renameFile($_FILES['fileToUpload'],$_POST['name'],$firstRename,$id,$_SESSION['username']);
         }
     
->>>>>>> 3aec242 (ui)
     //tableau association rafraichit
     refreshCSS();
     

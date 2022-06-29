@@ -144,15 +144,9 @@ class Model {
             die();
         }
     }
-<<<<<<< HEAD
-    public static function ajoutItem($name,$number,$description, $longDescription,$prix,$username){
-        echo $username;
-        $sql = "INSERT INTO objet (nomObjet,description_longue,description_courte,prix, disponible, idAssociation) VALUES ('$name','$longDescription','$description',$prix,$number,$username)";
-=======
     public static function ajoutItem($name,$number,$description,$prix,$username){
         echo $username;
         $sql = "INSERT INTO objet (nomObjet,description_longue,description_courte,prix, disponible, idAssociation) VALUES ('$name','$description','$description',$prix,$number,$username)";
->>>>>>> 3aec242 (ui)
         $sth = Model::$pdo->prepare($sql);
         $sth->execute();
         $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -180,8 +174,6 @@ class Model {
         return $result[0]['idAssociation'];
     }
 
-<<<<<<< HEAD
-=======
     public static function getIdObjet() {
         // $sql = "SELECT idObjet FROM objet";
         // $sth = Model::$pdo->prepare($sql);
@@ -191,7 +183,6 @@ class Model {
         return $id;
     }
 
->>>>>>> 3aec242 (ui)
     private function sendMailToUser($email, $msg){
         $mail = new PHPMailer(true);
         $mail->IsSMTP(); // telling the class to use SMTP
@@ -229,10 +220,6 @@ class Model {
             echo "Mailer Error: " . $mail->ErrorInfo;
          } 
     }
-<<<<<<< HEAD
-}
-
-=======
     public static function downloadImage($file, $objet,$nameFolder) {
             Model::createFolder($nameFolder);
             $nameFile = $file['name']; /* nom du fileToUpload */
@@ -284,7 +271,6 @@ class Model {
     rename($tmpName,'src/images/photos_objets/'.$nameFolder.'/'.$objet.'_'.$idObjet.'.jpg');
 }
 }
->>>>>>> 3aec242 (ui)
 Model::Init(); 
 ?>
     
