@@ -2,6 +2,7 @@
 <div class="table-responsive" style="margin:auto;width:80%">
 <?php
    echo '<div id="containerDetails" style="text-align: center;">';
+<<<<<<< HEAD
    if(file_exists("./src/images/photos_objets/".$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".PNG")){
        echo '<img class="logoDetails" src="./src/images/photos_objets/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.PNG" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
    }elseif (file_exists("./src/images/photos_objets/".$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".png")) {
@@ -10,6 +11,16 @@
        echo '<img class="logoDetails" src="./src/images/photos_objets/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.jpg" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
    }elseif (file_exists("./src/images/photos_objets/".$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".JPG")) {
        echo '<img class="logoDetails" src="./src/images/photos_objets/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.JPG" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
+=======
+   if(file_exists("./src/images/photos_objets/".$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".PNG")){
+       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.PNG" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
+   }elseif (file_exists("./src/images/photos_objets/".$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".png")) {
+       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.png" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
+   }elseif (file_exists("./src/images/photos_objets/".$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".jpg")) {
+       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.jpg" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
+   }elseif (file_exists("./src/images/photos_objets/".$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".JPG")) {
+       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.JPG" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
+>>>>>>> 3aec242 (ui)
    }else{
        echo '<img class="logoDetails" src="./src/images/default.jpg" alt="logoDefault"> <br/>';
    }
