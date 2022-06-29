@@ -83,36 +83,37 @@ INSERT INTO contact (idMembre, idAssociation) VALUES (3, 1);
 INSERT INTO contact (idMembre, idAssociation) VALUES (2, 2);
 INSERT INTO contact (idMembre, idAssociation) VALUES (4, 2);
 
-INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Soundboks',TRUE, 1);
-INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Grille barbecue',TRUE, 1);
-INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Spike',TRUE, 2);
-INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Béquilles', TRUE, 2);
-INSERT INTO objet (nomObjet, description_courte, prix, disponible, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L',10, TRUE, 5);
-INSERT INTO objet (nomObjet, description_courte, prix, disponible, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L',10,TRUE, 5);
-INSERT INTO objet (nomObjet, description_courte, prix, disponible, idAssociation) VALUES ('Appareil à raclette', 'Tefal inox design 10 pers',5,TRUE, 5);
-INSERT INTO objet (nomObjet, description_courte, prix, disponible, idAssociation) VALUES ('Appareil à fondue', 'Tefal colormania 8 pers',3,TRUE, 5);
-INSERT INTO objet (nomObjet, description_courte, disponible, idAssociation) VALUES ('Gaufrier multifonction', 'Boulanger',TRUE, 5);
-INSERT INTO objet (nomObjet, description_courte, disponible, idAssociation) VALUES ('Crépière', 'Krampouz diabolo',TRUE, 5);
-INSERT INTO objet (nomObjet, disponible,idAssociation) VALUES ('Machine à glace',TRUE, 1);
-INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Vidéoprojecteur',TRUE, 1);
-INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Ecran projection',TRUE, 1);
-INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Tireuse',TRUE, 1);
-INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Tireuse',TRUE, 1);
-INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Bancs',TRUE, 1);
-INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Tables',TRUE, 1);
+INSERT INTO objet (nomObjet, ,decription_longue, description_courte, idAssociation) VALUES ('Soundboks','Une superbe enceinte Bluetooth prête à mettre le feu dans tout les apparts les plus chauds de la pinède ! 
+Attention à ne pas se brûler ', 'Une superbe enceinte Bluetooth !', 1);
+INSERT INTO objet (nomObjet, idAssociation) VALUES ('Grille barbecue', 1);
+INSERT INTO objet (nomObjet, idAssociation) VALUES ('Spike', 2);
+INSERT INTO objet (nomObjet, idAssociation) VALUES ('Béquilles', 2);
+INSERT INTO objet (nomObjet, description_courte, prix, disponible, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L',10, 1, 5);
+INSERT INTO objet (nomObjet, description_courte, prix, disponible, idAssociation) VALUES ('Friteuse', 'Friteuse SEB 4L',10,1, 5);
+INSERT INTO objet (nomObjet, description_courte, prix, disponible, idAssociation) VALUES ('Appareil à raclette', 'Tefal inox design 10 pers',5,1, 5);
+INSERT INTO objet (nomObjet, description_courte, prix, disponible, idAssociation) VALUES ('Appareil à fondue', 'Tefal colormania 8 pers',3,1, 5);
+INSERT INTO objet (nomObjet, description_courte, disponible, idAssociation) VALUES ('Gaufrier multifonction', 'Boulanger',1, 5);
+INSERT INTO objet (nomObjet, description_courte, disponible, idAssociation) VALUES ('Crépière', 'Krampouz diabolo',3, 5);
+INSERT INTO objet (nomObjet, disponible,idAssociation) VALUES ('Machine à glace',0, 1);
+INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Vidéoprojecteur',0, 1);
+INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Ecran projection',2, 1);
+INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Tireuse',0, 1);
+INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Tireuse',0, 1);
+INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Bancs',0, 1);
+INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Tables',0, 1);
 INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Enrouleurs',TRUE, 1);
-INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Rallonges',TRUE, 1);
-INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Tonnelle',TRUE, 1);
-INSERT INTO objet (nomObjet, description_courte,disponible, idAssociation) VALUES ('Platine', 'XDJ RX Pioneer',TRUE, 4);
-INSERT INTO objet (nomObjet, description_courte,disponible, idAssociation) VALUES ('Teufel', 'Rockster Air',TRUE, 4);
-INSERT INTO objet (nomObjet, description_courte, description_longue, prix, disponible, idAssociation) VALUES ('Vélo', 'Avec caution', 'Forfait de 5 euros par mois et 30 euros de caution',5, TRUE, 6);
-INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Casque', TRUE, 6);
-INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Cadena', TRUE, 6);
-INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Aiguilles à coudre', TRUE, 8);
-INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Ciseaux', TRUE, 8);
-INSERT INTO objet (nomObjet, disponible, idAssociation) VALUES ('Aiguilles à crochet', TRUE, 8);
+INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Rallonges',1, 1);
+INSERT INTO objet (nomObjet,disponible, idAssociation) VALUES ('Tonnelle',0, 1);
+INSERT INTO objet (nomObjet, description_courte,disponible, idAssociation) VALUES ('Platine', 'XDJ RX Pioneer',0, 4);
+INSERT INTO objet (nomObjet, description_courte,disponible, idAssociation) VALUES ('Teufel', 'Rockster Air',0, 4);
+INSERT INTO objet (nomObjet, description_courte,disponible, idAssociation) VALUES ('Pinceau poils', 'Pinceau à poils, 1.5cm de largeur.',2, 3);
 
- 
+
+INSERT INTO location (idObjet, nom, prenom, mail) VALUES (1, 'Broussard', 'Alex', 'lex24estmort@mines-ales.org');
+INSERT INTO location (idObjet, nom, prenom, mail, messenger, telephone, dateDebut, dateFin, etat) VALUES (1, 'Pereira', 'Dylan', 'dylan.pereira@mines-ales.org', 'Dylan Pereira', '0623232323', '2022-03-02', '2022-03-05', 'rendu');
+INSERT INTO location (idObjet, nom, prenom, mail, messenger, telephone, dateDebut, dateFin, etat) VALUES (1, 'Pereira', 'Dylan', 'dylan.pereira@mines-ales.org', 'Dylan Pereira', '0623232323', '2022-03-10', '2022-03-15', 'rendu');
+INSERT INTO location (idObjet, nom, prenom, mail, messenger, telephone, dateDebut, dateFin, etat) VALUES (1, 'Pereira', 'Dylan', 'dylan.pereira@mines-ales.org', 'Dylan Pereira', '0623232323', '2022-03-20', '2022-03-25', 'rendu');
+INSERT INTO location (idObjet, nom, prenom, mail, messenger, telephone, dateDebut, dateFin, etat) VALUES (1, 'Pereira', 'Dylan', 'dylan.pereira@mines-ales.org', 'Dylan Pereira', '0623232323', '2022-03-30', '2022-04-05', 'en cours');
 
 
 

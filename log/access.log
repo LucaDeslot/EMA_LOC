@@ -3708,6 +3708,7 @@
 172.18.0.1 - - [01/Apr/2022:10:03:23 +0000] "GET /index.php HTTP/1.1" 200 3849 "http://localhost/index.php?action=historique&idObjet=1" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36" "-"
 172.18.0.1 - - [01/Apr/2022:10:03:23 +0000] "GET /src/css/global.css HTTP/1.1" 304 0 "http://localhost/index.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36" "-"
 <<<<<<< HEAD
+<<<<<<< HEAD
 172.18.0.1 - - [02/Apr/2022:15:37:16 +0000] "GET / HTTP/1.1" 200 3849 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36" "-"
 172.18.0.1 - - [02/Apr/2022:15:37:16 +0000] "GET /src/css/global.css HTTP/1.1" 304 0 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36" "-"
 172.18.0.1 - - [02/Apr/2022:15:37:16 +0000] "GET /src/images/logos_associations/BDS.PNG HTTP/1.1" 200 671755 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36" "-"
@@ -4908,6 +4909,8 @@
 172.18.0.1 - - [27/Jun/2022:15:04:30 +0000] "GET /index.php?action=deconnexion HTTP/1.1" 200 3391 "http://localhost/index.php?action=connexion" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0" "-"
 172.18.0.1 - - [27/Jun/2022:15:04:31 +0000] "GET /index.php HTTP/1.1" 200 4483 "http://localhost/index.php?action=deconnexion" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0" "-"
 =======
+=======
+>>>>>>> 3aec2426c6349e4282b3249382c674c7338cebf8
 172.18.0.1 - - [01/Apr/2022:16:37:30 +0000] "GET / HTTP/1.1" 200 4543 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0" "-"
 172.18.0.1 - - [01/Apr/2022:16:37:30 +0000] "GET /src/css/global.css HTTP/1.1" 200 3266 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0" "-"
 172.18.0.1 - - [01/Apr/2022:16:37:30 +0000] "GET /src/images/logos_associations/Meuhnuiserie.PNG HTTP/1.1" 304 0 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0" "-"
@@ -5203,4 +5206,7 @@
 172.18.0.1 - - [06/May/2022:07:41:53 +0000] "GET /?idAssociation=4 HTTP/1.1" 200 3284 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0" "-"
 172.18.0.1 - - [06/May/2022:07:41:53 +0000] "GET /src/images/photos_objets/Platine_21.jpg HTTP/1.1" 200 460799 "http://localhost/?idAssociation=4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0" "-"
 172.18.0.1 - - [06/May/2022:07:41:53 +0000] "GET /src/images/photos_objets/Teufel_22.jpg HTTP/1.1" 200 176224 "http://localhost/?idAssociation=4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0" "-"
+<<<<<<< HEAD
 >>>>>>> f94d4c4 (DIvers)
+=======
+>>>>>>> 3aec2426c6349e4282b3249382c674c7338cebf8

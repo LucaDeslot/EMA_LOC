@@ -600,6 +600,7 @@
 2022/04/01 09:48:07 [error] 25#25: *139 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/index.php?action=historique&idObjet=1"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 2022/06/07 16:50:38 [error] 32#32: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
 2022/06/07 19:11:41 [error] 32#32: *147 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "POST /src/model/VerifLogin.php HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost", referrer: "http://localhost/index.php?action=connexion"
 2022/06/08 17:41:28 [error] 24#24: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://212.95.74.75:9000", host: "localhost"
@@ -630,6 +631,9 @@
 =======
 <<<<<<< Updated upstream
 >>>>>>> 3aec242 (ui)
+=======
+<<<<<<< Updated upstream
+>>>>>>> 3aec2426c6349e4282b3249382c674c7338cebf8
 2022/04/01 16:38:16 [error] 24#24: *5 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
 2022/04/02 14:08:40 [error] 24#24: *29 open() "/usr/share/nginx/html/src/css/srcimagesondsond.jpg" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /src/css/srcimages%0Fonds%0Fond.jpg HTTP/1.1", host: "localhost", referrer: "http://localhost/src/css/global.css"
 2022/04/02 14:08:42 [error] 24#24: *29 open() "/usr/share/nginx/html/src/css/srcimagesondsond.jpg" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /src/css/srcimages%0Fonds%0Fond.jpg HTTP/1.1", host: "localhost", referrer: "http://localhost/src/css/global.css"
@@ -640,8 +644,11 @@
 2022/04/02 14:11:52 [error] 24#24: *39 open() "/usr/share/nginx/html/src/css/images/fonds/fond.jpg" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /src/css/images/fonds/fond.jpg HTTP/1.1", host: "localhost", referrer: "http://localhost/src/css/global.css"
 2022/04/02 14:11:53 [error] 24#24: *34 open() "/usr/share/nginx/html/src/css/images/fonds/fond.jpg" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /src/css/images/fonds/fond.jpg HTTP/1.1", host: "localhost", referrer: "http://localhost/src/css/global.css"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f94d4c4 (DIvers)
 =======
+=======
+>>>>>>> 3aec2426c6349e4282b3249382c674c7338cebf8
 =======
 2022/06/07 16:50:38 [error] 32#32: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
 2022/06/07 19:11:41 [error] 32#32: *147 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "POST /src/model/VerifLogin.php HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost", referrer: "http://localhost/index.php?action=connexion"
@@ -757,4 +764,7 @@
 2022/06/29 07:06:18 [warn] 24#24: *356 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000074, client: 172.18.0.1, server: localhost, request: "POST /index.php?action=ajoutItemAdmin HTTP/1.1", host: "localhost", referrer: "http://localhost/index.php?action=ajoutItemAdmin"
 2022/06/29 07:22:45 [warn] 24#24: *389 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000075, client: 172.18.0.1, server: localhost, request: "POST /index.php?action=ajoutItemAdmin HTTP/1.1", host: "localhost", referrer: "http://localhost/index.php?action=connexion"
 >>>>>>> Stashed changes
+<<<<<<< HEAD
 >>>>>>> 3aec242 (ui)
+=======
+>>>>>>> 3aec2426c6349e4282b3249382c674c7338cebf8
