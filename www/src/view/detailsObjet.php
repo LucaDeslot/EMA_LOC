@@ -2,14 +2,34 @@
 <div class="table-responsive" style="margin:auto;width:80%">
 <?php
    echo '<div id="containerDetails" style="text-align: center;">';
-   if(file_exists("./src/images/photos_objets/".$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".PNG")){
-       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.PNG" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
-   }elseif (file_exists("./src/images/photos_objets/".$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".png")) {
-       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.png" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
-   }elseif (file_exists("./src/images/photos_objets/".$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".jpg")) {
-       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.jpg" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
-   }elseif (file_exists("./src/images/photos_objets/".$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".JPG")) {
-       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$_SESSION['username'].'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.JPG" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
+            if($result[0]['idAssociation']==1)
+            {
+                $folder='BDE';
+            }
+            if($result[0]['idAssociation']==2)
+            {
+                $folder='BDS';
+            }
+            if($result[0]['idAssociation']==3)
+            {
+                $folder='BDA';
+            }
+            if($result[0]['idAssociation']==4)
+            {
+                $folder='EMAMix';
+            }
+            if($result[0]['idAssociation']==5)
+            {
+                $folder="EMA'sterchef";
+            }
+   if(file_exists("./src/images/photos_objets/".$folder.'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".PNG")){
+       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$folder.'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.PNG" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
+   }elseif (file_exists("./src/images/photos_objets/".$folder.'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".png")) {
+       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$folder.'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.png" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
+   }elseif (file_exists("./src/images/photos_objets/".$folder.'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".jpg")) {
+       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$folder.'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.jpg" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
+   }elseif (file_exists("./src/images/photos_objets/".$folder.'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].".JPG")) {
+       echo '<img class="logoDetails" src="./src/images/photos_objets/'.$folder.'/'.$result[0]['nomObjet'].'_'.$result[0]['idObjet'].'.JPG" alt="logo' . $result[0]['nomObjet'] . '"> <br/>';
    }else{
        echo '<img class="logoDetails" src="./src/images/default.jpg" alt="logoDefault"> <br/>';
    }
